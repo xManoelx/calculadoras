@@ -1,0 +1,9 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": [],
+
+    // Exclui os arquivos __pycache__ da exibição no explorador de arquivos
+    "files.exclude": {
+        "**/__pycache__": true 
+    }
+}
