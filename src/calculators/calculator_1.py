@@ -31,11 +31,11 @@ class Calculator1:
         calc_result = first_process_result + second_process_result + third_process_result
         response = self.__format_response(calc_result)
 
-        print("--------------------------------------------------")
-        print("Input da Calculadora 1:", input_data)
-        print("Resultado da Calculadora 1:", calc_result)
-        print("--------------------------------------------------")
-        
+        # print('------------------------------------------------')
+        # print("Input da Calculadora 1:", input_data)
+        # print("Resultado da Calculadora 1:", calc_result)
+        # print('------------------------------------------------')
+
         return response
 
     # Validação do corpo da requisição

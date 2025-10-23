@@ -4,6 +4,7 @@
 
     // Exclui os arquivos __pycache__ da exibição no explorador de arquivos
     "files.exclude": {
-        "**/__pycache__": true 
+        "**/__pycache__": true, 
+        "**/.pytest_cache": true
     }
 }
