@@ -6,7 +6,7 @@ from typing import Dict
 class Calculator1:
 
     '''
-     PRIMEIRA CALCULADORA
+     CALCULADORA 1
 
      Um número é dividido em 3 partes iguais.
 
