@@ -1,5 +1,6 @@
 from .calculator_2 import Calculator2
 from typing import Dict
+from src.drivers.numpy_handler import NumpyHandler
 
 # Mock da requisição Flask para testes
 class MockRequest:
@@ -10,7 +11,8 @@ class MockRequest:
 def test_calculator_2_calculate():
     mock_request = MockRequest(body = {'numbers':  [2.12, 4.62, 1.32]}) # Valor de entrada para o teste
 
-    calculator_2 = Calculator2() # Instância da Calculadora 2
+    driver = NumpyHandler()  # Instância do manipulador de driver
+    calculator_2 = Calculator2(driver)  # Instância da Calculadora 2
     formated_reponse = calculator_2.calculate(mock_request)  # Completar o teste conforme a implementação da Calculadora 2
     # print()
     # print('------------------------------------------------')

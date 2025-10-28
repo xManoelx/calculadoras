@@ -1,6 +1,7 @@
 from flask import Request as FlaskRequest
 from typing import Dict
 from src.drivers.numpy_handler import NumpyHandler
+from src.drivers.interfaces.driver_handler_interface import DriverHandlerInterface
 
 class Calculator2:
 
@@ -14,7 +15,11 @@ class Calculator2:
     
     ### Utiliza a lib Numpy para calcular o desvio padrão. ###
     '''
-    
+
+    # Função construtora da classe
+    def __init__(self, driver_handler: DriverHandlerInterface) -> None:
+        self.driver_handler = driver_handler
+
     # Função principal da calculadora
     def calculate(self, request: FlaskRequest) -> Dict: 
         body = request.json
@@ -41,7 +46,6 @@ class Calculator2:
     
     # Processamento dos dados
     def __process_data(self, input_data: list[float]) -> float:
-        numpy_handler = NumpyHandler()
         
         first_process_result = [(num * 11) ** 0.95 for num in input_data]
         # print()
@@ -49,7 +53,7 @@ class Calculator2:
         # print(first_process_result)
         # print('------------------------------------------------')
 
-        std_deviation = numpy_handler.standard_derivation(first_process_result)
+        std_deviation = self.driver_handler.standard_derivation(first_process_result)
         # print('------------------------------------------------')
         # print(f'Desvio Padrão: {std_deviation}')
         # print('------------------------------------------------')
