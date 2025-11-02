@@ -8,7 +8,8 @@ class MockRequest:
     def __init__(self, body: Dict) -> None:
         self.json = body
 
-class MockDriverHandler(DriverHandlerInterface):
+# Mock do DriverHandlerInterface para testes
+class MockDriverHandler:
     def standard_derivation(self, numbers: list[float]) -> float:
         return 3
 
