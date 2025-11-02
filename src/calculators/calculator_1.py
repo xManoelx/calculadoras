@@ -1,6 +1,7 @@
 # impotando o módulo request e renomeando-o para evitar conflitos
-from flask import Request as FlaskRequest
 from typing import Dict
+from flask import Request as FlaskRequest
+from src.errors.http_unprocessable_entity import HttpUnprocessableEntityError
 
 # Definindo a classe Calculator1
 class Calculator1:
@@ -41,7 +42,7 @@ class Calculator1:
     # Validação do corpo da requisição
     def __validate_body(self, body: Dict) -> float:
         if 'number' not in body:
-            raise Exception("Body mal formatado: 'number' ausente")
+            raise HttpUnprocessableEntityError("Body mal formatado: 'number' ausente")
 
         input_data = body['number']
         return input_data
